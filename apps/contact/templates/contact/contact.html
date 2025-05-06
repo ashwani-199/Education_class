@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<aside id="fh5co-hero">
+    <div class="flexslider">
+        <ul class="slides">
+            <li style="background-image: url({% static 'images/img_contact.jpg' %});">
+                <div class="overlay-gradient"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 text-center slider-text">
+                            <div class="slider-text-inner">
+                                <h1 class="heading-section">Contact us</h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>
+
+<div id="fh5co-contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-push-1 animate-box">
+
+                <div class="fh5co-contact-info">
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li class="address">Dev Nagar Shivalik Nagar, <br>Haridwar India 249403</li>
+                        <li class="phone"><a href="tel://1234567920">+ 91 8449592804 </a></li>
+                        <li class="email"><a href="mailto:technogyan375@gmail.com">technogyan375@gmail.com</a></li>
+                        <!-- <li class="url"><a href="#"></a></li> -->
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-6 animate-box">
+                <div class="mt-4" style="width: 95%; padding-top: 40px;">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="container-fluid p-0">
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                            <p class="btn btn-success">{{ message }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <h3>Get In Touch</h3>
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <!-- <label for="fname">First Name</label> -->
+                            <input type="text" id="fname" name="first_name" class="form-control"
+                                placeholder="Your firstname">
+                        </div>
+                        <div class="col-md-6">
+                            <!-- <label for="lname">Last Name</label> -->
+                            <input type="text" id="lname" name="last_name" class="form-control"
+                                placeholder="Your lastname">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="email">Email</label> -->
+                            <input type="text" id="email" name="email" class="form-control"
+                                placeholder="Your email address">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="subject">Subject</label> -->
+                            <input type="text" id="subject" name="subject" class="form-control"
+                                placeholder="Your subject of this message">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <!-- <label for="message">Message</label> -->
+                            <textarea name="message" id="message" name="message" cols="30" rows="10"
+                                class="form-control" placeholder="Say something about us"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary">
+                    </div>
+                    
+
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="map" class="fh5co-map"></div>
+
+<div id="fh5co-register" style="background-image: url({% static 'images/img_bg_2.jpg' %});">
+    <div class="overlay"></div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 animate-box">
+            <div class="date-counter text-center">
+                <h2>Get 05 of Online Courses for Free</h2>
+                <h3>By Ashwani Kumar</h3>
+                <div class="simply-countdown simply-countdown-one"></div>
+                <p><strong>Limited Offer, Hurry Up!</strong></p>
+                <p><a href="#" class="btn btn-primary btn-lg btn-reg">Contact Now!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

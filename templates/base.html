@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Python Class | Web development </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Join our Python tuition classes for beginners to advanced learners. Learn coding, build real projects, and master Python with expert guidance." />
+	<meta name="keywords"
+		content="python tution, python classes, webdevelopment course, Django, Flask, Javascript, Backend language" />
+	<meta name="author" content="Ashwani Kumar" />
+
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="Python Class | Web development " />
+	<meta property="og:image" content="http://{{request.META.HTTP_HOST}}{{request.path}}{% static 'images/project-1.jpg' %}" />
+	<meta property="og:url" content="http://{{request.META.HTTP_HOST}}{{request.path}}" />
+	<meta property="og:site_name" content="Python Tutor" />
+	<meta property="og:description" content="Join our Python tuition classes for beginners to advanced learners. Learn coding, build real projects, and master Python with expert guidance." />
+	<meta name="twitter:title" content="Python Class | Web development " />
+	<meta name="twitter:image" content="http://{{request.META.HTTP_HOST}}{{request.path}}{% static 'images/img_bg_4.jpg' %}" />
+	
+
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+
+	<!-- Pricing -->
+	<link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- FOR IE9 below -->
+
+	<script src="{% static 'js/respond.min.js' %}"></script>
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<style>
+		.whatsapp_float {
+			position: fixed;
+			width: 60px;
+			height: 60px;
+			bottom: 40px;
+			right: 40px;
+			background-color: #25d366;
+			color: #FFF;
+			border-radius: 50px;
+			text-align: center;
+			font-size: 30px;
+			box-shadow: 2px 2px 3px #999;
+			z-index: 100;
+		}
+
+		.whatsapp-icon {
+			margin-top: 16px;
+		}
+
+		/* for mobile */
+		@media screen and (max-width: 767px) {
+			.whatsapp-icon {
+				margin-top: 10px;
+			}
+
+			.whatsapp_float {
+				width: 40px;
+				height: 40px;
+				bottom: 20px;
+				right: 10px;
+				font-size: 22px;
+			}
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="fh5co-loader"></div>
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="top">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 text-right">
+							<p class="site">Python Class | Web development</p>
+							<p class="num">Call: +91 8449592804</p>
+							<!-- <ul class="fh5co-social">
+							<li><a href="#"><i class="icon-facebook2"></i></a></li>
+							<li><a href="#"><i class="icon-twitter2"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
+							<li><a href="#"><i class="icon-github"></i></a></li>
+						</ul> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-2">
+							<div id="fh5co-logo"><a href="{% url 'home' %}"><i
+										class="icon-study"></i>Py<span>Tutor</span></a></div>
+						</div>
+						<div class="col-xs-10 text-right menu-1">
+							<ul>
+								<li class="{{home}}"><a href="{% url 'home' %}">Home</a></li>
+								<!-- <li><a href="courses.html">Courses</a></li>
+							<li><a href="teacher.html">Teacher</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="pricing.html">Pricing</a></li>
+							<li class="has-dropdown">
+								<a href="blog.html">Blog</a>
+								<ul class="dropdown">
+									<li><a href="#">Web Design</a></li>
+									<li><a href="#">eCommerce</a></li>
+									<li><a href="#">Branding</a></li>
+									<li><a href="#">API</a></li>
+								</ul>
+							</li> -->
+								<li class="{{contact}}"><a href="{% url 'contact' %}">Contact</a></li>
+								<!-- <li class="btn-cta"><a href="#"><span>Login</span></a></li>
+							<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li> -->
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+
+		{% block content %}
+		{% endblock %}
+
+		<footer id="fh5co-footer" role="contentinfo" style="background-image: url({% static 'images/img_bg_4.jpg' %});">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row row-pb-md">
+					<div class="col-md-3 fh5co-widget">
+						<h3>About PyTutor</h3>
+						<p>Join our hands-on PyTutor classes designed for beginners and intermediate learners. Build a
+							strong foundation in coding, problem-solving, and real-world applications with personalized
+							instruction and practical projects.</p>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>Learning</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Python Programming</a></li>
+							<li><a href="#">Javascript</a></li>
+							<li><a href="#">Fask</a></li>
+							<li><a href="#">Django</a></li>
+							<li><a href="#">Server Side Application</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>Learn &amp; Grow</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Coding Practice</a></li>
+							<li><a href="#">Programming Knowledge</a></li>
+							<li><a href="#">Documentation</a></li>
+							<li><a href="#">Read Online Books</a></li>
+							<li><a href="#">Practical Knowledge</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>Engage us</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Marketing</a></li>
+							<li><a href="#">Visual Assistant</a></li>
+							<li><a href="#">System Analysis</a></li>
+							<li><a href="#">Advertise</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
+						<h3>Legal</h3>
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Find Designers</a></li>
+							<li><a href="#">Find Developers</a></li>
+							<li><a href="#">Teams</a></li>
+							<li><a href="#">Advertise</a></li>
+							<li><a href="#">API</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
+						<p>
+							<small class="block">&copy; 2025 Pytutor. All Rights Reserved.</small>
+							<small class="block">Designed by <a href="https://ashwani1996.pythonanywhere.com"
+									target="_blank">@ashwani_Web_development</a></small>
+						</p>
+					</div>
+				</div>
+
+			</div>
+		</footer>
+		
+	</div>
+	
+	
+	
+	<div class="m-4">
+		<a href="https://wa.me/+918449592804" class="whatsapp_float" target="_blank" rel="noopener noreferrer">
+			<i class="fa fa-whatsapp whatsapp-icon"></i>
+		</a>
+	</div>
+	<!-- <div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div> -->
+
+
+	<!-- jQuery -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<!-- Flexslider -->
+	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'js/jquery.countTo.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+
+	<!-- Google Map -->
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+	<script src="{% static 'js/google_map.js' %}"></script>
+	<!-- Count Down -->
+	<script src="{% static 'js/simplyCountdown.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'js/main.js' %}"></script>
+	<script>
+		var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+
+		// default example
+		simplyCountdown('.simply-countdown-one', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate()
+		});
+
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			enableUtc: false
+		});
+	</script>
+</body>
+
+</html>
