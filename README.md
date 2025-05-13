@@ -1,9 +1,9 @@
-# EduClassHub - Django Education Management System
+# Education_class - Django Education Class
 
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
-A comprehensive classroom management system for educational institutions, built with Django.
+A comprehensive classroom management system for educational class, built with Django.
 
 ## 🚀 Features
 
@@ -11,9 +11,7 @@ A comprehensive classroom management system for educational institutions, built 
 - **Student Enrollment**: Manage student registrations and class rosters
 - **Attendance Tracking**: Real-time class attendance system
 - **Gradebook**: Digital grading system with analytics
-- **Schedule Planner**: Interactive class timetable
 - **User Roles**: Separate interfaces for Admin, Teachers, and Students
-- **Document Sharing**: Secure file repository for course materials
 
 ## ⚙️ Prerequisites
 
@@ -26,8 +24,8 @@ A comprehensive classroom management system for educational institutions, built 
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/educclasshub.git
-cd educclasshub
+git clone https://github.com/yourusername/Education_class.git
+cd Education_class
 
 # Create virtual environment
 python -m venv venv
