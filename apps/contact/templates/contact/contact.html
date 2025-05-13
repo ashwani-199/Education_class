@@ -44,14 +44,14 @@
                     {% for message in messages %}
                     <div class="container-fluid p-0">
                         <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                            <p class="btn btn-success">{{ message }}</p>
+                            <p class="btn btn-primary">{{ message }}</p>
                         </div>
                     </div>
                     {% endfor %}
                     {% endif %}
                 </div>
                 <h3>Get In Touch</h3>
-                <form action="{% url 'contact' %}" method="post">
+                <form name="myForm" action="{% url 'contact' %}" onsubmit="return validateForm()" method="post">
                     {% csrf_token %}
                     <div class="row form-group">
                         <div class="col-md-6">
@@ -117,5 +117,35 @@
         </div>
     </div>
 </div>
+
+<script>
+    function validateForm() {
+        let first_name = document.forms["myForm"]["first_name"].value;
+        let last_name = document.forms["myForm"]["last_name"].value;
+        let email = document.forms["myForm"]["email"].value;
+        let subject = document.forms["myForm"]["subject"].value;
+        let message = document.forms["myForm"]["message"].value;
+        if (first_name == "") {
+            alert("First name must be filled out");
+            return false;
+        
+        } 
+        else if (last_name == "") {
+            alert("Last name must be filled out");
+            return false;
+        }
+        else if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        } else if (message == "") {
+            alert("Message must be filled out");
+            return false;
+        }
+        else if (subject == "") {
+            alert("Subject must be filled out");
+            return false;
+        }
+    }
+</script>
 
 {% endblock %}
