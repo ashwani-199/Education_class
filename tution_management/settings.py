@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     'apps.home',
+    'apps.about',
+    'apps.blog',
     'apps.contact',
+    'apps.legal',
 ]
 
 MIDDLEWARE = [

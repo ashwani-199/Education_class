@@ -1,299 +1,341 @@
 <!DOCTYPE HTML>
 {% load static %}
-<html>
+<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AspireEd Python | Web development </title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description"
-		content="Join our AspireEd Python classes for beginners to advanced learners. Learn coding, build real projects, and master Python with expert guidance." />
-	<meta name="keywords"
-		content="AspireEd Python, AspireEd python classes, AspireEd webdevelopment course, AspireEd Django, AspireEd Flask, AspireEd Javascript, AspireEd Backend language" />
-	<meta name="author" content="Ashwani Kumar" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AspireEd Python | Master Web Development with Django & Flask</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="AspireEd Python | Web development " />
-	<meta property="og:image"
-		content="https://{{request.META.HTTP_HOST}}{{request.path}}{% static 'images/project-1.jpg' %}" />
-	<meta property="og:url" content="http://{{request.META.HTTP_HOST}}{{request.path}}" />
-	<meta property="og:site_name" content="Python Tutor" />
-	<meta property="og:description"
-		content="Join our AspireEd Python classes for beginners to advanced learners. Learn coding, build real projects, and master Python with expert guidance." />
-	<meta name="twitter:title" content="AspireEd Python | Web development " />
-	<meta name="twitter:image"
-		content="https://{{request.META.HTTP_HOST}}{{request.path}}{% static 'images/img_bg_4.jpg' %}" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
 
+    <meta name="googlebot" content="index, follow">
+    <meta name="medium" content="multilingual">
 
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+    <meta name="description"
+        content="Unlock your coding potential with AspireEd Python classes. From beginner basics to advanced Django/Flask web development. Start building real-world projects today!">
+    <meta name="keywords"
+        content="AspireEd Python, Python classes India, Web development course, Django training, Flask tutorial, Javascript backend, Ashwani Kumar">
+    <meta name="author" content="Ashwani Kumar" />
+    <link rel="canonical" href="https://{{request.META.HTTP_HOST}}{{request.path}}" />
 
-	<link rel="icon" class="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+    <meta property="og:title" content="AspireEd Python | Web development" />
+    <meta property="og:description"
+        content="Join our AspireEd Python classes for beginners to advanced learners. Learn coding and master Python with expert guidance." />
+    <meta property="og:image" content="https://{{request.META.HTTP_HOST}}{% static 'images/project-1.jpg' %}" />
+    <meta property="og:url" content="https://{{request.META.HTTP_HOST}}{{request.path}}" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AspireEd Python | Web development">
+    <meta name="twitter:image" content="https://{{request.META.HTTP_HOST}}{% static 'images/img_bg_4.jpg' %}">
 
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Roboto+Slab:300,400&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
-
-	<!-- Pricing -->
-	<link rel="stylesheet" href="{% static 'css/pricing.css' %}">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-	<!-- Modernizr JS -->
-	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-	<!-- FOR IE9 below -->
-
-	<script src="{% static 'js/respond.min.js' %}"></script>
-
-	<!-- font awesome -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-	<style>
-		.whatsapp_float {
-			position: fixed;
-			width: 60px;
-			height: 60px;
-			bottom: 40px;
-			right: 40px;
-			background-color: #25d366;
-			color: #FFF;
-			border-radius: 50px;
-			text-align: center;
-			font-size: 30px;
-			box-shadow: 2px 2px 3px #999;
-			z-index: 100;
-		}
-
-		.whatsapp-icon {
-			margin-top: 16px;
-		}
-
-		/* for mobile */
-		@media screen and (max-width: 767px) {
-			.whatsapp-icon {
-				margin-top: 10px;
-			}
-
-			.whatsapp_float {
-				width: 40px;
-				height: 40px;
-				bottom: 20px;
-				right: 10px;
-				font-size: 22px;
-			}
-		}
-	</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css">
 
 
+
+
+
+    <style>
+        :root {
+            --whatsapp-green: #25d366;
+            --primary-blue: #2D3E50;
+        }
+
+        /* Glassmorphism Navigation */
+        .fh5co-nav .top-menu {
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Modernized WhatsApp Float */
+        .whatsapp_float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+        }
+
+        .whatsapp_float:hover {
+            transform: scale(1.1) rotate(5deg);
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Responsive Mobile Fixes */
+        @media screen and (max-width: 767px) {
+            .whatsapp_float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
+        }
+
+        /* Image hover effects for UI polish */
+        .user img {
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .user img:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Ensure content doesn't overlap auto-ads */
+        ins.adsbygoogle {
+            background: transparent !important;
+            margin-bottom: 20px !important;
+            display: block !important;
+        }
+
+        /* Clearer Navigation (AdSense crawlers love structured menus) */
+        .fh5co-nav .menu-1 ul li a {
+            padding: 10px 15px !important;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* High-Quality Content Container */
+        #fh5co-content-section {
+            padding: 7em 0;
+            background: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "AspireEd Python Web Development",
+      "description": "Learn Python, Django, Flask, and Javascript with hands-on projects.",
+      "provider": {
+        "@type": "Organization",
+        "name": "AspireEd",
+        "url": "https://{{request.META.HTTP_HOST}}"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "120"
+      }
+    }
+    </script>
 </head>
 
 <body>
-	<div class="fh5co-loader"></div>
-	<div id="page">
-		<nav class="fh5co-nav" role="navigation">
-			<div class="top">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 text-right">
-							<p class="site">AspireEd Python Class | Web development</p>
-							<p class="num">Call: +91 8449592804</p>
-							<ul class="fh5co-social">
-								<li><a href="https://www.linkedin.com/in/ashwani-p-31775219b"><i
-											class="icon-linkedin2"></i></a></li>
-								<li><a href="https://x.com/Ashwani87956236"><i class="icon-twitter2"></i></a></li>
-								<li><a href="https://github.com/ashwani-199"><i class="icon-github"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="top-menu">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-2">
-							<!-- <img src="{% static 'images/logo.jpeg' %}" alt="LOGO" height="75" width="90"> -->
-							<div class="user">
-								<img src="{% static 'images/logo.jpeg' %}" alt="LOGO" height="85" width="90">
-							</div>
-							<!-- <div id="fh5co-logo"><a href="{% url 'home' %}">
-									<i class="icon-study"></i><span></span></a>
-									
-							</div> -->
-						</div>
-						<div class="col-xs-10 text-right menu-1">
-							<ul>
-								<li class="{{home}}"><a href="{% url 'home' %}">Home</a></li>
-								<!-- <li><a href="courses.html">Courses</a></li>
-							<li><a href="teacher.html">Teacher</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="pricing.html">Pricing</a></li>
-							<li class="has-dropdown">
-								<a href="blog.html">Blog</a>
-								<ul class="dropdown">
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">eCommerce</a></li>
-									<li><a href="#">Branding</a></li>
-									<li><a href="#">API</a></li>
-								</ul>
-							</li> -->
-								<li class="{{contact}}"><a href="{% url 'contact' %}">Contact</a></li>
-								<!-- <li class="btn-cta"><a href="#"><span>Login</span></a></li>
-							<li class="btn-cta"><a href="#"><span>Create a Course</span></a></li> -->
-							</ul>
-						</div>
-					</div>
+    <div class="fh5co-loader"></div>
+    <div id="page">
 
-				</div>
-			</div>
-		</nav>
-		{% block content %}
-		{% endblock %}
-		<footer id="fh5co-footer" role="contentinfo" style="background-image: url({% static 'images/img_bg_4.jpg' %});">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row row-pb-md">
-					<div class="col-md-3 fh5co-widget">
-						<h3>About AspireEd Python</h3>
-						<p>Join our hands-on AspireEd Python designed for beginners and intermediate learners. Build a
-							strong foundation in coding, problem-solving, and real-world applications with personalized
-							instruction and practical projects.</p>
-					</div>
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-						<h3>Learning</h3>
-						<ul class="fh5co-footer-links">
-							<li>Python Programming</li>
-							<li>Javascript</li>
-							<li>Flask webdevelopment</li>
-							<li>Django Framework</li>
-							<li>Web Scraping Tools</li>
-							<li>Server Side Application</li>
-						</ul>
-					</div>
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-						<!-- <h3>Learn &amp; Grow</h3>
-						<ul class="fh5co-footer-links">
-							<li><a href="https://onecompiler.com/python">Coding Practice</a></li>
-							<li><a href="https://www.pdfiles.net/pdf/view/Head-First-Python">Programming Knowledge</a></li>
-							<li><a href="https://pythontechno.blogspot.com">Documentation</a></li>
-							<li><a href="https://openlibrary.org">Read Online Books</a></li>
-							<li><a href="https://www.codecademy.com/learn/learn-how-to-code">Practical Knowledge</a></li>
-						</ul> -->
-					</div>
-					<!-- <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-						<h3>Engage us</h3>
-						<ul class="fh5co-footer-links">
-							<li><a href="#">Marketing</a></li>
-							<li><a href="#">Visual Assistant</a></li>
-							<li><a href="#">System Analysis</a></li>
-							<li><a href="#">Advertise</a></li>
-						</ul>
-					</div> -->
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-						<h3>Learn &amp; Grow</h3>
-						<ul class="fh5co-footer-links">
-							<li><a href="https://onecompiler.com/python">Coding Practice</a></li>
-							<li><a href="https://www.pdfiles.net/pdf/view/Head-First-Python">Programming Knowledge</a></li>
-							<li><a href="https://pythontechno.blogspot.com">Documentation</a></li>
-							<li><a href="https://openlibrary.org">Read Online Books</a></li>
-							<li><a href="https://www.codecademy.com/learn/learn-how-to-code">Practical Knowledge</a></li>
-						</ul>
-					</div>
+        <nav class="fh5co-nav" role="navigation">
+            <div class="top" style="background: #2D3E50; padding: 8px 0; font-size: 13px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <p class="site"
+                                style="display: inline-block; margin-right: 20px; color: rgba(255,255,255,0.8);">
+                                <i class="icon-study" style="margin-right: 5px;"></i> AspireEd Python Academy
+                            </p>
+                            <p class="num" style="display: inline-block; color: #fff; font-weight: 600;">
+                                <i class="icon-phone" style="margin-right: 5px;"></i> +91 8449592804
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-						<h3>Legal</h3>
-						<ul class="fh5co-footer-links">
-							<li><a href="https://ashwani1996.pythonanywhere.com">Find Designers</a></li>
-							<li><a href="https://www.fiverr.com/s/DBjyDZa">Find Developers</a></li>
-							
-						</ul>
-					</div>
-				</div>
+            <div class="top-menu"
+                style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: all 0.3s ease;">
+                <div class="container">
+                    <div class="row" style="display: flex; align-items: center;">
+                        <div class="col-xs-4">
+                            <div class="user" style="padding: 10px 0;">
+                                <a href="{% url 'home' %}"
+                                    style="display: flex; align-items: center; text-decoration: none;">
+                                    <img src="{% static 'images/logo.jpeg' %}" alt="AspireEd Logo" height="55"
+                                        width="auto" loading="lazy"
+                                        style="border-radius: 4px; transition: transform 0.3s ease;">
+                                    <span
+                                        style="margin-left: 12px; font-family: 'Roboto Slab', serif; font-size: 20px; font-weight: 700; color: #2D3E50; letter-spacing: -0.5px;">
+                                        Aspire<span style="color: #FF5722;">Ed</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
 
-				<div class="row copyright">
-					<div class="col-md-12 text-center">
-						<p>
-							<small class="block">&copy; 2025 AspireEd Python. All Rights Reserved.</small>
-							<small class="block">Designed by <a href="https://ashwani1996.pythonanywhere.com"
-									target="_blank">@ashwani_Web_development</a></small>
-						</p>
-					</div>
-				</div>
+                        <div class="col-xs-8 text-right menu-1">
+                            <ul style="margin: 0; padding: 0; list-style: none;">
+                                <li class="{{home}}" style="display: inline-block; margin-left: 30px;">
+                                    <a href="{% url 'home' %}" class="nav-link">Home</a>
+                                </li>
+                                <li class="{{about}}" style="display: inline-block; margin-left: 30px;">
+                                    <a href="{% url 'about' %}" class="nav-link">About</a>
+                                </li>
+                                <li class="{{blog}}" style="display: inline-block; margin-left: 30px;">
+                                    <a href="{% url 'blog_home' %}" class="nav-link">Blog</a>
+                                </li>
+                                <li class="{{contact}}" style="display: inline-block; margin-left: 30px;">
+                                    <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                                </li>
+                                <li style="display: inline-block; margin-left: 30px;">
+                                    <a href="{% url 'contact' %}" class="btn-cta-nav">Join Now</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-			</div>
-		</footer>
+        {% block content %}{% endblock %}
 
-	</div>
+        <footer id="fh5co-footer" role="contentinfo"
+            style="background-image: url({% static 'images/img_bg_4.jpg' %}); padding: 80px 0 30px 0; background-attachment: fixed;">
+            <div class="overlay" style="background: rgba(45, 62, 80, 0.96);"></div>
+            <div class="container">
+                <div class="row row-pb-md">
+                    <div class="col-md-4 fh5co-widget">
+                        <h3 style="color: #fff; font-size: 22px; margin-bottom: 25px; font-weight: 700;">AspireEd Python
+                        </h3>
+                        <p style="color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 15px;">
+                            Empowering the next generation of developers in Haridwar and beyond. We specialize in
+                            turning beginners into professional backend engineers through project-based learning.
+                        </p>
+                        <ul class="fh5co-social" style="margin-top: 20px; padding: 0;">
+                            <li style="display: inline; margin-right: 15px;"><a
+                                    href="https://www.linkedin.com/in/ashwani-p-31775219b"
+                                    style="color: #FF5722; font-size: 20px;"><i class="icon-linkedin2"></i></a></li>
+                            <li style="display: inline; margin-right: 15px;"><a href="https://github.com/ashwani-199"
+                                    style="color: #FF5722; font-size: 20px;"><i class="icon-github"></i></a></li>
+                            <li style="display: inline;"><a href="https://wa.me/918449592804"
+                                    style="color: #FF5722; font-size: 20px;"><i class="fa fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
 
+                    <div class="col-md-2 col-md-push-1 fh5co-widget">
+                        <h3 style="color: #fff; font-size: 18px; margin-bottom: 25px; font-weight: 600;">Curriculum</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><span style="color: rgba(255,255,255,0.6);">Python Core</span></li>
+                            <li><span style="color: rgba(255,255,255,0.6);">Django Web</span></li>
+                            <li><span style="color: rgba(255,255,255,0.6);">Flask Framework</span></li>
+                            <li><span style="color: rgba(255,255,255,0.6);">REST APIs</span></li>
+                        </ul>
+                    </div>
 
+                    <div class="col-md-2 col-md-push-1 fh5co-widget">
+                        <h3 style="color: #fff; font-size: 18px; margin-bottom: 25px; font-weight: 600;">Resources</h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="https://onecompiler.com/python" target="_blank" rel="noopener">Coding
+                                    Sandbox</a></li>
+                            <li><a href="https://pythontechno.blogspot.com" target="_blank" rel="noopener">Blog &
+                                    Docs</a></li>
+                            <li><a href="https://www.fiverr.com/s/DBjyDZa" target="_blank" rel="noopener">Hire
+                                    Expert</a></li>
+                        </ul>
+                    </div>
 
-	<div class="m-4">
-		<a href="https://wa.me/+918449592804" class="whatsapp_float" target="_blank" rel="noopener noreferrer">
-			<i class="fa fa-whatsapp whatsapp-icon"></i>
-		</a>
-	</div>
-	<!-- <div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-	</div> -->
+                    <div class="col-md-3 col-md-push-1 fh5co-widget">
+                        <h3 style="color: #fff; font-size: 18px; margin-bottom: 25px; font-weight: 600;">Legal & Support
+                        </h3>
+                        <ul class="fh5co-footer-links">
+                            <li><a href="{% url 'privacy' %}"
+                                    style="border-bottom: 1px solid transparent; transition: 0.3s;">Privacy Policy</a>
+                            </li>
+                            <li><a href="{% url 'terms' %}"
+                                    style="border-bottom: 1px solid transparent; transition: 0.3s;">Terms of
+                                    Use</a>
+                            </li>
+                            <li><a href="/sitemap.xml">Sitemap</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row copyright"
+                    style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; margin-top: 30px;">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <small class="block" style="color: rgba(255,255,255,0.5); font-size: 13px;">&copy; 2026
+                                <strong>AspireEd Python</strong>. Built for Educational Excellence.</small>
+                            <small class="block"
+                                style="color: rgba(255,255,255,0.3); font-size: 11px; margin-top: 5px;">
+                                Engineered by <a href="https://ashwani1996.pythonanywhere.com" target="_blank"
+                                    style="color: #FF5722;">@ashwani_Web_development</a>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 
-	<!-- jQuery -->
-	<script src="{% static 'js/jquery.min.js' %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-	<!-- Bootstrap -->
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<!-- Waypoints -->
-	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-	<!-- Stellar Parallax -->
-	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-	<!-- Carousel -->
-	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
-	<!-- Flexslider -->
-	<script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
-	<!-- countTo -->
-	<script src="{% static 'js/jquery.countTo.js' %}"></script>
-	<!-- Magnific Popup -->
-	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-	<script src="{% static 'js/magnific-popup-options.js' %}"></script>
+    </div>
 
-	
-	<!-- Count Down -->
-	<script src="{% static 'js/simplyCountdown.js' %}"></script>
-	<!-- Main -->
-	<script src="{% static 'js/main.js' %}"></script>
-	<script>
-		var d = new Date(new Date().getTime() + 1000 * 120 * 120 * 2000);
+    <a href="https://wa.me/918449592804" class="whatsapp_float" target="_blank" rel="noopener"
+        aria-label="Contact us on WhatsApp">
+        <i class="fa fa-whatsapp"></i>
+    </a>
 
-		// default example
-		simplyCountdown('.simply-countdown-one', {
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate()
-		});
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/jquery.flexslider-min.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/magnific-popup-options.js' %}"></script>
+    <script src="{% static 'js/simplyCountdown.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
-		//jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: false
-		});
-	</script>
+    <script>
+        // Set countdown to 30 days from now for a modern marketing look
+        var d = new Date();
+        d.setDate(d.getDate() + 30);
+
+        simplyCountdown('.simply-countdown-one', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            enableUtc: false
+        });
+    </script>
 </body>
 
 </html>

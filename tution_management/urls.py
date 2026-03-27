@@ -6,18 +6,22 @@ from django.views.generic.base import TemplateView
 from tution_management.common_modules.mainservices import MainService
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.sitemaps.views import sitemap
-from .sitemaps import StaticSitemap
+from tution_management.sitemaps import StaticViewSitemap
+from tution_management import views
 
 sitemaps = {
-    'static': StaticSitemap
+    'static': StaticViewSitemap
 }
 
 urlpatterns = [
-    path('sitemap.xml/', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views'),
-    path('robots.txt/', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
-    path('admin/', admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views'),
+    path("robots.txt", views.robots_txt),
+    path('dashboard/', admin.site.urls),
     path('', include('apps.home.urls')),
+    path('', include('apps.about.urls')),
+    path('', include('apps.blog.urls')),
     path('', include('apps.contact.urls')),
+    path('', include('apps.legal.urls')),
     
 ]
 

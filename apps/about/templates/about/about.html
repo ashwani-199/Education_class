@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<title>About Ashwani Kumar | Founder of AspireEd Python</title>
+<meta name="description" content="Meet Ashwani Kumar, a Web Developer from Haridwar and founder of AspireEd Python. Expert in Django, Flask, and Python education.">
+
+<style>
+    .about-header {
+        background: linear-gradient(135deg, #2D3E50 0%, #1a252f 100%);
+        padding: 100px 0;
+        color: #fff;
+        text-align: center;
+    }
+    .about-section {
+        padding: 80px 0;
+        background: #fff;
+    }
+    .profile-img {
+        border-radius: 15px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 30px;
+    }
+    .skill-tag {
+        display: inline-block;
+        background: #fff0eb;
+        color: #FF5722;
+        padding: 5px 15px;
+        border-radius: 50px;
+        margin: 5px;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .experience-box {
+        border-left: 3px solid #FF5722;
+        padding-left: 25px;
+        margin-top: 30px;
+    }
+    .experience-box h4 {
+        color: #2D3E50;
+        font-weight: 700;
+    }
+    .about-text p {
+        font-size: 16px;
+        line-height: 1.9;
+        color: #555;
+    }
+</style>
+
+<div class="about-header">
+    <div class="container">
+        <h1 style="font-family: 'Roboto Slab', serif; font-weight: 700;">The Mission Behind AspireEd</h1>
+        <p style="opacity: 0.8; font-size: 18px;">Empowering aspiring developers through Pythonic excellence.</p>
+    </div>
+</div>
+
+<div class="about-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 animate-box">
+                <img src="{% static 'images/logo.jpeg' %}" alt="Ashwani Kumar - AspireEd Founder" class="profile-img">
+                <div style="margin-top: 20px;">
+                    <h4>Core Tech Stack</h4>
+                    <span class="skill-tag">Python 3.x</span>
+                    <span class="skill-tag">Django Framework</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">JavaScript ES6</span>
+                </div>
+            </div>
+
+            <div class="col-md-7 about-text animate-box">
+                <h2 style="color: #2D3E50; font-weight: 700;">Hi, I'm Ashwani Kumar</h2>
+                <p>
+                    Based in the spiritual and educational hub of <strong>Haridwar, Uttarakhand</strong>, I am a passionate Web Developer and educator dedicated to making backend engineering accessible to everyone. 
+                </p>
+                <p>
+                    I founded <strong>AspireEd Python</strong> because I noticed a gap between learning basic Python syntax and building real-world, scalable web applications. My goal is to bridge that gap by providing hands-on tutorials, deep dives into frameworks like Django and Flask, and practical career advice for the modern developer.
+                </p>
+
+                <div class="experience-box">
+                    <h4>Why Learn with AspireEd?</h4>
+                    <p>
+                        We don't just teach code; we teach <strong>architecture</strong>. From understanding how the Request-Response cycle works to deploying your first production-ready application on PythonAnywhere or Heroku, every piece of content here is designed to be actionable.
+                    </p>
+                </div>
+
+                <div style="margin-top: 40px;">
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Work With Me</a>
+                    <a href="https://github.com/ashwani-199" target="_blank" class="btn btn-default btn-lg" style="margin-left: 10px;">View My Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="fh5co-counter" class="fh5co-counters" style="background-image: url({% static 'images/img_bg_2.jpg' %});" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 text-center animate-box">
+                        <span class="icon"><i class="icon-code"></i></span>
+                        <span class="fh5co-counter js-counter" data-from="0" data-to="50000" data-speed="3000" data-refresh-interval="50"></span>
+                        <span class="fh5co-counter-label">Lines of Code</span>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-center animate-box">
+                        <span class="icon"><i class="icon-head"></i></span>
+                        <span class="fh5co-counter js-counter" data-from="0" data-to="120" data-speed="3000" data-refresh-interval="50"></span>
+                        <span class="fh5co-counter-label">Students Mentored</span>
+                    </div>
+                    <div class="col-md-4 col-sm-6 text-center animate-box">
+                        <span class="icon"><i class="icon-book2"></i></span>
+                        <span class="fh5co-counter js-counter" data-from="0" data-to="45" data-speed="3000" data-refresh-interval="50"></span>
+                        <span class="fh5co-counter-label">Tutorials Published</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -37,6 +37,113 @@ body {
   object-fit: cover;
 }
 
+/* Modern Nav Link Styling */
+.nav-link {
+  color: #2D3E50 !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF5722;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.active .nav-link::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #FF5722 !important;
+}
+
+/* CTA Button inside Nav */
+.btn-cta-nav {
+  background: #FF5722;
+  color: #fff !important;
+  padding: 8px 20px !important;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(255, 87, 34, 0.2);
+}
+
+.btn-cta-nav:hover {
+  background: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 87, 34, 0.3);
+}
+
+/* Active State for Django */
+.active .nav-link {
+  color: #FF5722 !important;
+}
+
+/* Sticky Behavior on Scroll */
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Footer-specific hover UI */
+.fh5co-footer-links li {
+  margin-bottom: 12px;
+  list-style: none;
+}
+
+.fh5co-footer-links li a {
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.fh5co-footer-links li a:hover {
+  color: #FF5722 !important;
+  padding-left: 5px;
+}
+
+.fh5co-social li a:hover {
+  opacity: 0.8;
+}
+
+pre[class*="language-"] {
+  border-radius: 10px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  border: 1px solid #333;
+}
+
+/* Add a "Python" label to the top of the code box */
+pre[class*="language-"]::before {
+  content: "Python Source";
+  display: block;
+  background: #444;
+  color: #fff;
+  padding: 2px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
 
 
 #page {
