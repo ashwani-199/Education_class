@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
-{% block content %}
 
+{% block title %}
+{{ post.title }} | AspireEd Python Blog
+{% endblock %}
+
+{% block meta_description %}
+{{ post.meta_description }}
+{% endblock %}
+
+{% block content %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
