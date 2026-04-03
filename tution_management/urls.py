@@ -17,6 +17,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views'),
     path("robots.txt", views.robots_txt),
     path('dashboard/', admin.site.urls),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('', include('apps.home.urls')),
     path('', include('apps.about.urls')),
     path('', include('apps.blog.urls')),

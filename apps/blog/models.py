@@ -1,14 +1,14 @@
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     author = models.CharField(max_length=100, default="Ashwani Kumar")
     updated_on = models.DateTimeField(auto_now=True)
-    content = RichTextField()  # CKEditor replaces TextField
+    content = CKEditor5Field('Text', config_name='extends')
     meta_description = models.CharField(max_length=160, blank=True, help_text="Search engine summary")
     created_on = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='blog_pics', blank=True, null=True)
