@@ -12,36 +12,165 @@ Explore Python tutorials, Django guides, Flask insights, and coding tips from As
 {% block content %}
 <style>
     .search-form .form-control {
-        height: 45px;
+        height: 50px;
         border-radius: 25px 0 0 25px;
-        border: 2px solid #eee;
+        border: 2px solid #e9ecef;
         padding-left: 20px;
+        font-size: 16px;
+        transition: border-color 0.3s ease;
     }
 
     .search-form .btn-primary {
-        height: 45px;
+        height: 50px;
         border-radius: 0 25px 25px 0;
-        padding: 0 25px;
+        padding: 0 30px;
+        background-color: #FF5722;
+        border-color: #FF5722;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .search-form .btn-primary:hover {
+        background-color: #e64a19;
+        border-color: #e64a19;
     }
 
     .search-form .form-control:focus {
         border-color: #FF5722;
-        box-shadow: none;
+        box-shadow: 0 0 0 0.2rem rgba(255, 87, 34, 0.25);
+    }
+
+    .blog-card {
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-img {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 12px 0 0 12px;
+        margin: 0;
+    }
+
+    .blog-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.3s ease;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .blog-card:hover .blog-img img {
+        transform: scale(1.08);
+    }
+
+    .blog-placeholder {
+        height: 100%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 12px 0 0 12px;
+    }
+
+    .blog-meta {
+        font-size: 14px;
+        color: #6c757d;
+        margin-bottom: 10px;
+    }
+
+    .blog-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .blog-title a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .blog-title a:hover {
+        color: #FF5722;
+    }
+
+    .blog-description {
+        color: #6c757d;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .btn-read-more {
+        background-color: #FF5722;
+        border-color: #FF5722;
+        border-radius: 25px;
+        padding: 8px 20px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .btn-read-more:hover {
+        background-color: #e64a19;
+        border-color: #e64a19;
+    }
+
+    .section-heading {
+        margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: #343a40;
+        margin-bottom: 15px;
+    }
+
+    .section-heading p {
+        font-size: 18px;
+        color: #6c757d;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .search-results-info {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        border-left: 4px solid #FF5722;
+    }
+
+    .search-results-info strong {
+        color: #FF5722;
     }
 </style>
 
-
-
-<div id="fh5co-blog">
+<div id="fh5co-blog" style="padding: 80px 0;">
     <div class="container">
-
         <div class="row animate-box">
-            <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+            <div class="col-md-8 col-md-offset-2 text-center section-heading">
                 <h2>Python Tutorials & Insights</h2>
                 <p>Mastering Django, Flask, and Python from Haridwar to the World.</p>
             </div>
         </div>
-        <div class="row" style="margin-bottom: 40px;">
+        
+        <div class="row" style="margin-bottom: 50px;">
             <div class="col-md-6 col-md-offset-3">
                 <form action="{% url 'blog_home' %}" method="get" class="search-form">
                     <div class="input-group">
@@ -55,38 +184,61 @@ Explore Python tutorials, Django guides, Flask insights, and coding tips from As
                     </div>
                 </form>
                 {% if request.GET.q %}
-                <p class="text-center" style="margin-top: 15px;">
-                    Showing results for: <strong>"{{ request.GET.q }}"</strong>
-                    | <a href="{% url 'blog_home' %}" style="color: #FF5722;">Clear Search</a>
-                </p>
+                <div class="search-results-info text-center">
+                    <p style="margin: 0;">
+                        Showing results for: <strong>"{{ request.GET.q }}"</strong>
+                        | <a href="{% url 'blog_home' %}" style="color: #FF5722; text-decoration: none;">Clear Search</a>
+                    </p>
+                </div>
                 {% endif %}
             </div>
         </div>
+        
         <div class="row">
             {% for post in post_list %}
-            <div class="col-md-4 col-sm-6 animate-box">
-                <div class="blog-entry">
-                    <a href="{{ post.get_absolute_url }}" class="blog-img">
-                        {% if post.image %}
-                        <img src="{{ post.image.url }}" class="img-responsive" alt="{{ post.title }}">
-                        {% else %}
-                        <div
-                            style="height:200px; background:#2D3E50; display:flex; align-items:center; justify-content:center; color:#fff;">
-                            Python Academy</div>
-                        {% endif %}
-                    </a>
-                    <br>
-                    <div class="desc">
-                        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
-                        <span><small>{{ post.created_on|date:"M d, Y" }}</small> 
-                            | <small>By {{ post.author }}</small></span>
-                        <p>{{ post.meta_description|truncatewords:20 }}</p>
-                        <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-sm">Read More</a>
+            <div class="col-lg-6 col-md-6 animate-box">
+                <div class="card blog-card h-100">
+                    <div class="row no-gutters h-100">
+                        <div class="col-md-5">
+                            <div class="blog-img h-100">
+                                {% if post.image %}
+                                <img src="{{ post.image.url }}" class="card-img h-100" alt="{{ post.title }}" style="object-fit: cover;">
+                                {% else %}
+                                <div class="blog-placeholder h-100 d-flex align-items-center justify-content-center">
+                                    <span>Python Academy</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body d-flex flex-column justify-content-center text-center h-100">
+                                <div class="blog-meta mb-2">
+                                    <small>{{ post.created_on|date:"M d, Y" }}</small> 
+                                    | <small>By {{ post.author }}</small>
+                                </div>
+                                <h6 class="blog-title mb-3">
+                                    <a href="{{ post.get_absolute_url }}">{{ post.title|truncatewords:8 }}</a>
+                                </h6>
+                                <p class="blog-description mb-3 flex-grow-1">{{ post.meta_description|truncatewords:12 }}</p>
+                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary btn-read-more mt-auto">Read More</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
+        
+        {% if not post_list %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <div style="padding: 60px 20px; background-color: #f8f9fa; border-radius: 15px; margin-top: 30px;">
+                    <h3 style="color: #6c757d; margin-bottom: 15px;">No posts found</h3>
+                    <p style="color: #6c757d; margin-bottom: 0;">Try adjusting your search terms or check back later for new content.</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
 
