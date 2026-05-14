@@ -6,16 +6,18 @@ from django.views.generic.base import TemplateView
 from tution_management.common_modules.mainservices import MainService
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.sitemaps.views import sitemap
-from tution_management.sitemaps import StaticViewSitemap
+from tution_management.sitemaps import StaticViewSitemap, PostSitemap
 from tution_management import views
 
 sitemaps = {
-    'static': StaticViewSitemap
+    'static': StaticViewSitemap,
+    'posts': PostSitemap,
 }
 
 urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views'),
     path("robots.txt", views.robots_txt),
+    path("ads.txt", views.ads_txt),
     path('dashboard/', admin.site.urls),
     path("ckeditor5/", include('django_ckeditor_5.urls')),
     path('', include('apps.home.urls')),

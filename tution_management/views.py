@@ -15,5 +15,5 @@ def robots_txt(request):
 @require_GET
 def ads_txt(request):
     # Replace with your actual publisher ID from AdSense
-    content = "google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0"
+    content = "google.com, pub-1678059963139758, DIRECT, f08c47fec0942fa0"
     return HttpResponse(content, content_type="text/plain")
